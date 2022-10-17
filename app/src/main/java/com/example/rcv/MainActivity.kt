@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
     private  lateinit var newArrayList: ArrayList<News>
     lateinit var imageId:Array<Int>
     lateinit var heading :Array<String>
+    lateinit var cost:Array<String>
+    lateinit var description:Array<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -38,18 +40,48 @@ class MainActivity : AppCompatActivity() {
             )
             heading= arrayOf(
                 "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
-                "Boat is very useful in the time of flood",
+                "Mahendra Singh Dhoniis an Indian former professional cricketer",
+                "Virat Kohli is an Indian international cricketer and former captain.",
+                " Rohit Gurunath Sharma  is an Indian international and the current captain. ",
+                "Yuvraj Singh  is a former cricketer and all rounder. ",
+                "Hardik Himanshu Pandya is an Indian international cricketer.",
+                "Mohammed Shami  is an Indian international cricketer, who plays for the India.",
+                "Yuzvendra Chahalis an Indian cricketer and former chess player.",
+                "Rahul Sharad Dravid is an Indian cricket coach and former captain of the India.",
+                "Sachin Ramesh Tendulkar is an Indian former international cricketer.",
+                "Irfan Pathan is a former Indian cricketer turned Commentator, Cricket Analyst, Actor and Dancer.",
+                "Ramesh Rajaram Powar is a former Indian cricketer.",
 
+            )
+
+            cost =arrayOf(
+                "$10000",
+                "$20000",
+                "$30000",
+                "$40000",
+                "$10000",
+                "$20000",
+                "$30000",
+                "$40000",
+                "$10000",
+                "$20000",
+                "$30000",
+                "$40000",
+
+            )
+            description= arrayOf(
+                "Boat is very useful in the time of flood",
+                "Mahendra Singh Dhoniis an Indian former professional cricketer",
+                "Virat Kohli is an Indian international cricketer and former captain.",
+                " Rohit Gurunath Sharma  is an Indian international and the current captain. ",
+                "Yuvraj Singh  is a former cricketer and all rounder. ",
+                "Hardik Himanshu Pandya is an Indian international cricketer.",
+                "Mohammed Shami  is an Indian international cricketer, who plays for the India.",
+                "Yuzvendra Chahalis an Indian cricketer and former chess player.",
+                "Rahul Sharad Dravid is an Indian cricket coach and former captain of the India.",
+                "Sachin Ramesh Tendulkar is an Indian former international cricketer.",
+                "Irfan Pathan is a former Indian cricketer turned Commentator, Cricket Analyst, Actor and Dancer.",
+                "Ramesh Rajaram Powar is a former Indian cricketer.",
             )
 
             newRecyclerView=findViewById(R.id.recyclerView)
@@ -64,12 +96,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun getUserdata() {
         for(i in imageId.indices){
-            val news=News(imageId[i],heading[i])
+            val news=News(imageId[i],heading[i],cost[i],description[i])
             newArrayList.add(news)
 
         }
 
-        newRecyclerView.adapter=MyAdapter(newArrayList)
+        newRecyclerView.adapter=MyAdapter(newArrayList,this)
 
     }
 }
