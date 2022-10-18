@@ -12,10 +12,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var newRecyclerView: RecyclerView
     private  lateinit var newArrayList: ArrayList<News>
-    lateinit var imageId:Array<Int>
-    lateinit var heading :Array<String>
-    lateinit var cost:Array<String>
-    lateinit var description:Array<String>
+    private lateinit var imageId:Array<Int>
+    private lateinit var heading :Array<String>
+    private lateinit var cost:Array<String>
+    private lateinit var description:Array<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
